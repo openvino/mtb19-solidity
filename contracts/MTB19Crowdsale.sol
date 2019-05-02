@@ -1,6 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "openzeppelin-solidity/contracts/crowdsale/validation/PausableCrowdsale.sol";
+import "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/crowdsale/distribution/FinalizableCrowdsale.sol";
 
@@ -9,13 +10,15 @@ import "openzeppelin-solidity/contracts/token/ERC20/ERC20Capped.sol";
 
 import "openzeppelin-solidity/contracts/access/roles/MinterRole.sol";
 
-contract MTB19Crowdsale is MintedCrowdsale, PausableCrowdsale, FinalizableCrowdsale {
+contract MTB19Crowdsale is MintedCrowdsale, PausableCrowdsale, FinalizableCrowdsale, CappedCrowdsale {
 
    constructor(uint256 rate, address payable wallet, IERC20 token,
-               uint256 openingTime, uint256 closingTime
-               ) public Crowdsale(rate, wallet, token)
+               uint256 openingTime, uint256 closingTime,
+               uint256 cap
+              ) public Crowdsale(rate, wallet, token)
                         TimedCrowdsale(openingTime, closingTime)
-                        FinalizableCrowdsale() { }
+                        FinalizableCrowdsale()
+                        CappedCrowdsale(cap) { }
 
    /**
      * @dev Overrides finalization of FinalizableCrowdsale. It stores the remaining tokens to the
