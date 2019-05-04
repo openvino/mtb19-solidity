@@ -3330,8 +3330,8 @@
         }
       },
       "links": {},
-      "address": "0xC18055E2Bc747dF928b7c98666E4DE21214a26CF",
-      "transactionHash": "0x640c3e8142f4ccccfdadd087755975795a1c7f198058f8cf461e807eb1deb332"
+      "address": "0x1013fcd13BffAa2aE98107f7ee964AeA389612dc",
+      "transactionHash": "0x080b7e4543cda721b18629b6c2035ab7cee95c5e5fbbb78f684ee31e54c2966b"
     },
     "5777": {
       "events": {
@@ -3447,7 +3447,7 @@
     }
   },
   "schemaVersion": "3.0.5",
-  "updatedAt": "2019-05-02T14:33:27.923Z",
+  "updatedAt": "2019-05-04T11:27:30.535Z",
   "devdoc": {
     "methods": {
       "buyTokens(address)": {

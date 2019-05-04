@@ -7,8 +7,8 @@ import "openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol";
 
 contract MTB19 is ERC20Pausable, ERC20Burnable, ERC20Capped, ERC20Detailed {
 
-	constructor() public ERC20Capped(10000000000000000000) ERC20Detailed("MikeTangoBravo19", "MTB19", 18) {
-      mint(msg.sender, 5000000000000000000);
+	constructor(uint256 cap, address prefund, uint256 amount) public ERC20Capped(cap) ERC20Detailed("MikeTangoBravo19", "MTB19", 18) {
+      mint(prefund, amount);
    }
 
 }
